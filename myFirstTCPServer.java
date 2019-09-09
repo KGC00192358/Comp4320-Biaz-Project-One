@@ -28,11 +28,14 @@ public class myFirstTCPServer {
       InputStreamReader in = new InputStreamReader(clntSock.getInputStream());
       BufferedReader bf = new BufferedReader(in);
       String msg = bf.readLine();
+      System.out.println("Recieved message: " + msg);
+      System.out.println("From Client at: " + clntSock.getInetAddress().getHostAddress());
+      System.out.println("On port: " + clntSock.getPort());
       StringBuilder sendmsg = new StringBuilder();
       sendmsg.append(msg);
       sendmsg.reverse();
       msg = sendmsg.toString();
-      System.out.println("msg");
+      System.out.println("Reversed message: " + msg);
       
       PrintWriter pr = new PrintWriter(clntSock.getOutputStream());
       pr.println(msg);
