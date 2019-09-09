@@ -32,6 +32,7 @@ public class myFirstTCPServer {
       sendmsg.append(msg);
       sendmsg.reverse();
       msg = sendmsg.toString();
+      System.out.println("msg");
       
       PrintWriter pr = new PrintWriter(clntSock.getOutputStream());
       pr.println(msg);
